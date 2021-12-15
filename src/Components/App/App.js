@@ -11,7 +11,7 @@ function App() {
 
       </div>
       <div className='bday-container'>
-        <BirthdayContainer />
+        <BirthdayContainer months={months} />
       </div>
     </div>
   );

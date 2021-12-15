@@ -1,8 +1,22 @@
 import React from 'react'
+import './BirthdayContainer.css'
 
-function BirthdayContainer(){
+function BirthdayContainer({ months }){
+    
+    const calendar = months.map((month) => {
+        return(
+        <div className = "calendar-month">
+            <h3>{month.name}</h3>
+        </div>
+        )
+    })
+
+    console.log(calendar)
+    
     return (
-    <p>Heeeeey this is the birthday container</p>
+    <div className="calendar-display">
+        {calendar}
+    </div>
     )
 }
 
