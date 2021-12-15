@@ -2,20 +2,28 @@ import './App.css';
 import BirthdayContainer from '../BirthdayContainer';
 import { months } from '../../months_data';
 import fetchBirthdays from '../ApiCalls';
+import React from 'react';
 
-function App() {
+class App extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+      birthdays: []
+    }
+  }
+  render =() => {
+    return (
+        <div className="App">
+          <h1>Birthdays</h1>
+          <div className='bday-form'>
 
-  return (
-    <div className="App">
-      <h1>Birthdays</h1>
-      <div className='bday-form'>
-
-      </div>
-      <div className='bday-container'>
-        <BirthdayContainer months={months} />
-      </div>
-    </div>
-  );
+          </div>
+          <div className='bday-container'>
+            <BirthdayContainer months={months} />
+          </div>
+        </div>
+      );
+  } 
 }
 
 export default App;
