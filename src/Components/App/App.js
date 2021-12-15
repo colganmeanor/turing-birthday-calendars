@@ -18,12 +18,18 @@ class App extends React.Component {
     .then((data) => this.setState({birthdays: data}))
   }
 
+  captureBirthday = (data) => {
+    this.setState(prevState => ({
+      birthdays: [...prevState.birthdays, data]
+    }))
+  }
+
   render =() => {
     return (
         <div className="App">
           <h1>Birthdays</h1>
           <div className='bday-form'>
-            <BirthdayForm />
+            <BirthdayForm captureBirthday={this.captureBirthday} />
           </div>
           <div className='bday-container'>
             <BirthdayContainer months={months} birthdays={this.state.birthdays} />

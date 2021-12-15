@@ -3,8 +3,8 @@ import './BirthdayForm.css'
 
 
 class BirthdayForm extends React.Component {
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
         this.state = {
             name: '',
             month: 0,
@@ -16,8 +16,18 @@ class BirthdayForm extends React.Component {
         this.setState({[event.target.name]: event.target.value })
     }
 
+    
+
 
     render = () => {
+
+        const data = {
+            name: this.state.name,
+            id: Date.now(),
+            month: Number(this.state.month),
+            day: Number(this.state.day),
+        }
+
         return (
             <div>
             <label>
@@ -32,6 +42,7 @@ class BirthdayForm extends React.Component {
                 Day:
                 <input type="number" name="day" value={this.state.day} onChange={this.handleChange}/>
             </label>
+            <input type="submit" value="Add this Birthday" onClick={() => this.props.captureBirthday(data)}/>
             </div>
         )
     }
