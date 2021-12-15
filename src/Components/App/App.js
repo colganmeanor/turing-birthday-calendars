@@ -11,6 +11,11 @@ class App extends React.Component {
       birthdays: []
     }
   }
+
+  componentDidMount = () => {
+    fetchBirthdays()
+  }
+
   render =() => {
     return (
         <div className="App">
