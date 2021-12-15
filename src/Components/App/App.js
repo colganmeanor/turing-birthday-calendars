@@ -3,6 +3,7 @@ import BirthdayContainer from '../BirthdayContainer';
 import { months } from '../../months_data';
 import fetchBirthdays from '../ApiCalls';
 import React from 'react';
+import BirthdayForm from '../BirthdayForm';
 
 class App extends React.Component {
   constructor() {
@@ -22,7 +23,7 @@ class App extends React.Component {
         <div className="App">
           <h1>Birthdays</h1>
           <div className='bday-form'>
-
+            <BirthdayForm />
           </div>
           <div className='bday-container'>
             <BirthdayContainer months={months} birthdays={this.state.birthdays} />
