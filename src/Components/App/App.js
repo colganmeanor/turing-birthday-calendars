@@ -14,6 +14,7 @@ class App extends React.Component {
 
   componentDidMount = () => {
     fetchBirthdays()
+    .then((data) => this.setState({birthdays: data}))
   }
 
   render =() => {
