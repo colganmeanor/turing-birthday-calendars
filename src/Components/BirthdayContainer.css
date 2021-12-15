@@ -1,8 +1,16 @@
 .calendar-display {
     display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: flex-start;
 }
 
 .calendar-month {
     border: solid black;
+    /* padding: 5%; */
+    margin: 2%;
+    height: 25%;
+    width: 7%;
+    background-color: white;
     
 }
