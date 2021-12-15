@@ -25,7 +25,7 @@ class App extends React.Component {
 
           </div>
           <div className='bday-container'>
-            <BirthdayContainer months={months} />
+            <BirthdayContainer months={months} birthdays={this.state.birthdays} />
           </div>
         </div>
       );
