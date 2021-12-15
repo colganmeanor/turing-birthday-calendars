@@ -11,9 +11,9 @@ function BirthdayContainer({ months, birthdays, deleteBirthdays }){
 
        const monthsBirthdays = foundBirthdays.map((birthday) => {
             return (
-            <div key={birthday.id}>
-                <p>{birthday.name}</p>
-                <p>{birthday.month} / {birthday.day}</p>
+            <div key={birthday.id} className ="user-birthdays">
+                <p>{birthday.name}: </p>
+                <p> {birthday.month} / {birthday.day}</p>
                 <button onClick={() => deleteBirthdays(birthday.id) }>🗑</button>
             </div>    
             )
