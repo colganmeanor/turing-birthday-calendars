@@ -1,6 +1,7 @@
 import './App.css';
 import BirthdayContainer from '../BirthdayContainer';
 import { months } from '../../months_data';
+import fetchBirthdays from '../ApiCalls';
 
 function App() {
 
