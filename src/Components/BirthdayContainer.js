@@ -1,7 +1,7 @@
 import React from 'react'
 import './BirthdayContainer.css'
 
-function BirthdayContainer({ months, birthdays }){
+function BirthdayContainer({ months, birthdays, deleteBirthdays }){
     
     const calendar = months.map((month) => {
         
@@ -14,6 +14,7 @@ function BirthdayContainer({ months, birthdays }){
             <div key={birthday.id}>
                 <p>{birthday.name}</p>
                 <p>{birthday.month} / {birthday.day}</p>
+                <button onClick={() => deleteBirthdays(birthday.id) }>🗑</button>
             </div>    
             )
         })

@@ -1,7 +1,7 @@
 import './App.css';
 import BirthdayContainer from '../BirthdayContainer';
 import { months } from '../../months_data';
-import fetchBirthdays from '../ApiCalls';
+import { fetchBirthdays, postBirthdays, deleteBirthdays } from '../ApiCalls';
 import React from 'react';
 import BirthdayForm from '../BirthdayForm';
 
@@ -19,9 +19,15 @@ class App extends React.Component {
   }
 
   captureBirthday = (data) => {
+    postBirthdays(data)
     this.setState(prevState => ({
       birthdays: [...prevState.birthdays, data]
     }))
+  }
+
+  componentDidUpdate = () => {
+    fetchBirthdays()
+    .then((data) => this.setState({birthdays: data}))
   }
 
   render =() => {
@@ -32,7 +38,7 @@ class App extends React.Component {
             <BirthdayForm captureBirthday={this.captureBirthday} />
           </div>
           <div className='bday-container'>
-            <BirthdayContainer months={months} birthdays={this.state.birthdays} />
+            <BirthdayContainer months={months} birthdays={this.state.birthdays} deleteBirthdays={deleteBirthdays} />
           </div>
         </div>
       );
