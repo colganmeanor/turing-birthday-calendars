@@ -19,7 +19,7 @@ function BirthdayContainer({ months, birthdays }){
         })
 
         return(
-        <div className = "calendar-month" key={month.id}>
+        <div className = "calendar-month" id={month.name} key={month.id}>
             <h3>{month.name}</h3>
             {monthsBirthdays}
         </div>

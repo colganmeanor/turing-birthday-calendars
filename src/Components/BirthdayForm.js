@@ -29,20 +29,21 @@ class BirthdayForm extends React.Component {
         }
 
         return (
-            <div>
-            <label>
-                Name:
-                <input type="text" name="name" value={this.state.name} onChange={this.handleChange}/>
-            </label>
-            <label>
-                Month:
-                <input type="number" name="month" value={this.state.month} onChange={this.handleChange}/>
-            </label>
-            <label>
-                Day:
-                <input type="number" name="day" value={this.state.day} onChange={this.handleChange}/>
-            </label>
-            <input type="submit" value="Add this Birthday" onClick={() => this.props.captureBirthday(data)}/>
+            <div className="birthday-form">
+                <h2>Submit New Birthdays Here:</h2>
+                <label>
+                    Name:
+                    <input type="text" name="name" value={this.state.name} onChange={this.handleChange}/>
+                </label>
+                <label>
+                    Month:
+                    <input type="number" name="month" value={this.state.month} onChange={this.handleChange}/>
+                </label>
+                <label>
+                    Day:
+                    <input type="number" name="day" value={this.state.day} onChange={this.handleChange}/>
+                </label>
+                <input type="submit" value="Add this Birthday" onClick={() => this.props.captureBirthday(data)}/>
             </div>
         )
     }
