@@ -1,3 +1,7 @@
 .calendar-display {
-    
+    display: flex;
+}
+
+.calendar-month {
+    border: solid black;
 }

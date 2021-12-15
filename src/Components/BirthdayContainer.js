@@ -7,6 +7,7 @@ function BirthdayContainer({ months }){
         return(
         <div className = "calendar-month">
             <h3>{month.name}</h3>
+            <p>Placeholder Birthday here</p>
         </div>
         )
     })
